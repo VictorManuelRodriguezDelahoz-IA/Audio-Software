@@ -1,0 +1,62 @@
+# Sincronización automática de Notion a GitHub
+# Se ejecuta semanalmente los lunes a las 9 AM o manualmente
+
+name: Sync Notion Docs
+
+on:
+  schedule:
+    # Ejecutar todos los lunes a las 9 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:  # Permite ejecución manual desde GitHub UI
+
+jobs:
+  sync-notion:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install notion-client markdown python-dotenv
+
+      - name: Sync Notion to Repo
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_PAGE_STARTUP: ${{ secrets.NOTION_PAGE_STARTUP }}
+          NOTION_DATABASE_RECOCHAPP: ${{ secrets.NOTION_DATABASE_RECOCHAPP }}
+          NOTION_DATABASE_ML_STUDIOS: ${{ secrets.NOTION_DATABASE_ML_STUDIOS }}
+        run: |
+          python scripts/sync_notion.py
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [[ -n $(git status -s) ]]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push if changes
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git config user.name "Notion Sync Bot"
+          git config user.email "bot@notion-sync.local"
+          git add .
+          git commit -m "docs: sync from Notion [automated]"
+          git push
+
+      - name: Create summary
+        run: |
+          echo "## Notion Sync Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- **Status**: ${{ steps.check_changes.outputs.changes == 'true' && 'Changes detected and committed' || 'No changes detected' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Timestamp**: $(date)" >> $GITHUB_STEP_SUMMARY
