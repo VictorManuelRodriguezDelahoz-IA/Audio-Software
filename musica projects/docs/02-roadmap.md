@@ -7,19 +7,21 @@ Desarrollo en paralelo de 3 productos con lanzamientos escalonados. Enfoque inic
 
 ## FASE 1: Fundación y MVP (Meses 1-6)
 
+> **NOTA (2026-02-19):** Se decidió fusionar Atmosphere AI + SilenceOS en un solo producto llamado **AtmoSphere**. El MVP de backend está completo con generación DSP. Siguiente paso: integrar modelos de IA reales.
+
 ### Mes 1-2: Setup y Prototipo Atmosphere AI
 **Objetivo:** Validar concepto técnico más sencillo
 
 #### Semana 1-2: Infraestructura
-- [ ] Setup repositorio y arquitectura base
-- [ ] Configuración de backend (FastAPI)
+- [x] Setup repositorio y arquitectura base
+- [x] Configuración de backend (FastAPI)
 - [ ] Integración inicial con Hugging Face
 - [ ] Testing de modelos: MusicGen, Riffusion, AudioCraft
 
 #### Semana 3-4: Generación Básica
-- [ ] Pipeline de generación de música
-- [ ] API endpoint para generar audio
-- [ ] Parámetros básicos (mood, tempo, genre)
+- [x] Pipeline de generación de música (DSP synthesis MVP)
+- [x] API endpoint para generar audio (`POST /atmosphere/generate`)
+- [x] Parámetros básicos (mood, energy, genre, scene_id)
 - [ ] Sistema de cache de audio generado
 
 #### Semana 5-8: MVP Web
@@ -34,9 +36,9 @@ Desarrollo en paralelo de 3 productos con lanzamientos escalonados. Enfoque inic
 **Objetivo:** Desarrollar tecnología core de enmascaramiento
 
 #### Semana 9-12: DSP Core
-- [ ] Investigación de algoritmos de ruido coloreado
-- [ ] Implementación en Python/C++
-- [ ] Testing de diferentes tipos de ruido (blanco, rosa, marrón)
+- [x] Investigación de algoritmos de ruido coloreado
+- [x] Implementación en Python (Voss-McCartney, Butterworth filters)
+- [x] Testing de diferentes tipos de ruido (blanco, rosa, marrón, speech-masking, office-hum)
 - [ ] Medición de efectividad de enmascaramiento
 
 #### Semana 13-16: Prototipo Hardware

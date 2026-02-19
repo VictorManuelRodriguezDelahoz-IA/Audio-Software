@@ -1,53 +1,212 @@
-### Resumen del Estado del Proyecto: "Audio-Software"
+# Estado del Proyecto: "Audio-Software"
 
-Este documento resume el estado actual del repositorio, las decisiones tomadas y las acciones realizadas.
+> Ultima actualizacion: 2026-02-19
 
-#### 1. Visión General y Estructura
+Este documento resume el estado actual del repositorio, las decisiones tomadas y las acciones realizadas. Sirve como punto de re-entrada para retomar el trabajo.
 
-El repositorio se ha organizado para funcionar como una "Startup HQ" que alberga múltiples proyectos. Los dos proyectos activos principales son:
+---
 
-*   **Recochapp:** Una aplicación full-stack para organizar partidos de fútbol casuales.
-*   **musica projects:** Un laboratorio de I+D para soluciones de audio basadas en Machine Learning.
+## 1. Vision General y Estructura
 
-Se implementó un sistema de **sincronización con Notion** que actualiza automáticamente la documentación del proyecto cada semana mediante una GitHub Action.
+El repositorio funciona como una "Startup HQ" que alberga multiples proyectos:
 
-#### 2. Estado de `Recochapp`
+| Proyecto | Descripcion | Estado |
+|----------|-------------|--------|
+| **Recochapp** | App full-stack para futbol casual | Refactorizado, funcional |
+| **musica projects** | Laboratorio de audio + IA (AtmoSphere) | **MVP funcional** |
+| **therian-app** | App wellness para comunidad therian | Completa (sin trackear) |
 
-El proyecto `Recochapp` estaba desorganizado y no era funcional. Se realizó una **auditoría y refactorización completa**:
+Se implemento un sistema de **sincronizacion con Notion** (GitHub Action semanal) y un conjunto de **4 Claude Skills** para asistencia automatizada.
 
-*   **Estructura:** Todos los archivos se organizaron en una estructura profesional con carpetas separadas: `backend/` y `frontend/`.
-*   **Backend (FastAPI):**
-    *   **Corregido y Funcional:** Se solucionaron numerosos errores críticos, incluyendo dependencias faltantes, imports incorrectos, un modelo de base de datos (`Match`) que no existía y el uso de APIs obsoletas de SQLAlchemy.
-    *   **Estado:** El servidor de backend ahora arranca correctamente y los endpoints para usuarios, login y partidos son funcionales.
-*   **Frontend (Next.js):**
-    *   Se corrigió la duplicidad de páginas y se creó una página de inicio (`Home`) adecuada.
-*   **Base de Datos y Orquestación:**
-    *   El `docker-compose.yml` está configurado para levantar el backend, el frontend y la base de datos PostgreSQL.
-*   **Variables de Entorno:** Se consolidaron los 3 archivos `.env` en un único `.env.example` (plantilla) y un `.env` (privado y gitignoreado).
+---
 
-**En resumen: `Recochapp` ha pasado de ser un conjunto de archivos dispersos a una aplicación estructurada y funcional, lista para continuar su desarrollo.**
+## 2. Estado de `Recochapp`
 
-#### 3. Estado de `musica projects`
+**Estado:** Refactorizado y funcional, listo para continuar desarrollo.
 
-*   **Funcionalidad Base:** El proyecto tiene un endpoint `/analyze` que funciona y realiza un análisis básico de frecuencias de archivos de audio WAV usando `librosa`.
-*   **Estrategia a Largo Plazo:** Se ha documentado en el `roadmap` una estrategia clara para el desarrollo de modelos de IA:
-    1.  **Corto Plazo:** Integrar modelos open-source (como MusicGen) para construir y validar un MVP rápidamente.
-    2.  **Mediano Plazo:** Usar los ingresos/experiencia para especializar modelos mediante *fine-tuning*.
-    3.  **Largo Plazo:** Construir un modelo generativo propietario desde cero.
+- Backend FastAPI corregido y operativo (usuarios, login, partidos)
+- Frontend Next.js con pagina de inicio funcional
+- Docker Compose configurado (backend + frontend + PostgreSQL)
+- Variables de entorno consolidadas en `.env.example`
 
-#### 4. Tareas Pendientes y Próximos Pasos
+**Siguiente paso:** Agregar features adicionales o validar con usuarios.
 
-Para cuando retomes el proyecto, aquí están los puntos a seguir:
+---
 
-*   **1. Implementar MVP de Atmosphere AI:**
-    *   **Acción inmediata:** Añadir las dependencias de IA (`transformers`, `torch`) al `requirements.txt` de `musica projects` para empezar a construir el servicio de generación de música.
+## 3. Estado de `musica projects` (PRINCIPAL)
 
-*   **2. Validar Sincronización con Notion:**
-    *   **Acción:** Realizar una sincronización manual o revisar los logs de la GitHub Action para asegurar que la conexión con la API de Notion sigue funcionando correctamente.
+**Estado: MVP de AtmoSphere implementado y funcionando.**
 
-*   **3. Desarrollar Skills de Asistencia en Claude:**
-    *   **Acción:** Crear y documentar un conjunto de "skills" especializadas en el directorio `.claude/skills/` para mejorar la asistencia en este proyecto.
-    *   **Skills a crear:**
-        *   **Skill de Auditoría de Código:** Para revisar la calidad, estructura y buenas prácticas del código en los proyectos.
-        *   **Skill de Testing:** Para automatizar la creación y ejecución de tests unitarios e de integración.
-        *   **Skill de Análisis de Negocio:** Para evaluar nuevas ideas, analizar mercados y refinar los modelos de negocio (expandir la ya existente).
+### Que es AtmoSphere
+
+AtmoSphere es la fusion de dos productos originales:
+- **Atmosphere AI** (musica generativa royalty-free para negocios)
+- **SilenceOS** (enmascaramiento acustico inteligente)
+
+Combinados en una plataforma B2B SaaS para hoteles, restaurantes, spas, oficinas y retail.
+
+### Endpoints operativos
+
+| Metodo | Ruta | Descripcion |
+|--------|------|-------------|
+| `GET` | `/` | Health check + info del producto |
+| `GET` | `/atmosphere/scenes` | 6 escenas pre-configuradas por tipo de negocio |
+| `GET` | `/atmosphere/scenes/{id}` | Detalle de una escena |
+| `POST` | `/atmosphere/generate` | Genera musica ambiental (por escena o custom) |
+| `GET` | `/masking/profiles` | 5 perfiles de ruido disponibles |
+| `POST` | `/masking/generate` | Genera audio de enmascaramiento acustico |
+| `POST` | `/analyze` | Analisis de frecuencias de archivo WAV |
+
+### Escenas de negocio implementadas
+
+| ID | Nombre | Genero | Target |
+|----|--------|--------|--------|
+| `hotel-lobby` | Hotel Lobby | Ambient Jazz | Hotels & Hospitality |
+| `spa-relax` | Spa & Relax | Nature Ambient | Spas, Wellness Centers |
+| `restaurant-dinner` | Restaurant Dinner | Bossa Lounge | Restaurants, Wine Bars |
+| `office-focus` | Office Focus | Minimal Electronic | Offices, Coworking |
+| `retail-energy` | Retail Energy | Pop Instrumental | Retail, Shopping Malls |
+| `cafe` | Cafe | Acoustic Chill | Cafes, Bakeries |
+
+### Perfiles de noise masking (DSP real)
+
+| ID | Tipo | Algoritmo | Recomendado para |
+|----|------|-----------|------------------|
+| `white` | White Noise | Distribucion uniforme | Concentracion general |
+| `pink` | Pink Noise | Voss-McCartney 1/f | Oficinas, salas de espera |
+| `brown` | Brown Noise | Random walk browniano | Spas, meditacion, dormir |
+| `speech-masking` | Speech Masking | Butterworth band-pass 300-3000Hz | Call centers, oficinas abiertas |
+| `office-hum` | Office Hum | Low-pass + armonicos 60/120Hz | Oficinas silenciosas |
+
+### Arquitectura actual
+
+```
+musica projects/
+├── config.py                    # Settings (pydantic-settings)
+├── main.py                      # FastAPI + CORS + 3 routers
+├── requirements.txt             # fastapi, uvicorn, librosa, numpy, scipy, pydantic-settings
+├── api/
+│   ├── atmosphere.py            # Router: /atmosphere/*
+│   ├── noise_masking.py         # Router: /masking/*
+│   └── sound_analysis.py        # Router: /analyze
+├── schemas/
+│   ├── __init__.py              # Exports de todos los schemas
+│   ├── atmosphere.py            # GenerateRequest, GenerateResponse, Scene, Mood, Energy, Genre
+│   └── noise_masking.py         # MaskingRequest, MaskingResponse, NoiseProfile, NoiseType
+├── services/
+│   ├── music_generator.py       # Sintesis DSP de musica ambiental + sistema de escenas
+│   ├── noise_masking.py         # Generacion real de ruido coloreado (white/pink/brown/speech/office)
+│   └── sound_processor.py       # Analisis de audio con Librosa (STFT, frecuencias)
+├── utils/
+│   └── file_utils.py            # Utilidades de archivos temporales
+└── docs/
+    ├── 01-necesidades.md        # Analisis de necesidades por producto
+    ├── 02-roadmap.md            # Roadmap de implementacion a 5 anos
+    ├── 03-modelo-negocio.md     # Business model canvas completo
+    └── 04-ideas-adicionales.md  # Pipeline de ideas experimentales
+```
+
+### Como ejecutar
+
+```bash
+cd "musica projects"
+pip install -r requirements.txt
+uvicorn main:app --reload
+# Abrir http://localhost:8000/docs para Swagger UI
+```
+
+### Estrategia de IA (escalonada)
+
+1. **Fase actual (MVP):** Sintesis DSP (ondas sinusoidales + ruido coloreado). Funcional sin GPU.
+2. **Siguiente paso:** Integrar MusicGen/AudioCraft de Hugging Face para generacion real de musica.
+3. **Largo plazo:** Fine-tuning de modelos propios, modelo generativo propietario.
+
+---
+
+## 4. Investigacion de Mercado (2026-02-19)
+
+Se realizo una investigacion exhaustiva del mercado audio + IA. Reporte completo en:
+`docs/oportunidades-negocio/global/investigacion-audio-ai-2026.md`
+
+### Cifras clave
+
+| Segmento | Valor 2025 | CAGR |
+|----------|-----------|------|
+| AI en Musica | $6.65B | 27.8% |
+| Audio Espacial + IA | $1.99B | ~25% |
+| Voice Cloning | ~$1.1B | 37.1% |
+| Sound Therapy | $1.2B | 10.2% |
+
+### 5 ideas combinadas identificadas
+
+1. **AtmoSphere** (en desarrollo) - Audio ambiental B2B, $99-499/mes
+2. **BrandSonic** - Identidad sonora as a Service para PYMEs
+3. **SoundForge AI** - All-in-one para creadores de contenido
+4. **GameSound AI** - Audio generativo para game devs
+5. **SampleForge** - Marketplace de samples IA
+
+---
+
+## 5. Claude Skills (4 disponibles)
+
+Ubicacion: `.claude/skills/`
+
+| Skill | Archivo | Proposito |
+|-------|---------|-----------|
+| **business-analyst** | `business-analyst.md` | Evaluar proyectos, investigar oportunidades, scoring |
+| **code-auditor** | `code-auditor.md` | Auditoria de codigo, seguridad, arquitectura |
+| **test-generator** | `test-generator.md` | Generar y ejecutar tests (pytest, Jest) |
+| **market-researcher** | `market-researcher.md` | Investigar mercados, competencia, validacion |
+
+---
+
+## 6. Tareas Pendientes y Proximos Pasos
+
+### Prioridad Alta
+
+- [ ] **Integrar MusicGen/AudioCraft:** Reemplazar sintesis DSP con generacion real de musica via Hugging Face (`transformers` + `torch`)
+- [ ] **Agregar tests:** Usar la skill `test-generator` para crear tests de los endpoints de AtmoSphere
+- [ ] **Landing page:** Crear pagina web simple para mostrar AtmoSphere a potenciales clientes B2B
+
+### Prioridad Media
+
+- [ ] **Base de datos:** Agregar PostgreSQL para usuarios, suscripciones y cache de audio generado
+- [ ] **Autenticacion:** JWT auth para proteger endpoints
+- [ ] **Frontend dashboard:** Panel B2B para que gerentes configuren sus escenas
+- [ ] **Validar con clientes:** Contactar 5-10 hoteles/restaurantes para demo
+
+### Prioridad Baja
+
+- [ ] **Validar Sincronizacion con Notion:** Revisar logs de GitHub Action
+- [ ] **Commit de therian-app:** Esta funcional pero sin trackear en git
+- [ ] **Explorar BrandSonic:** Segunda idea mas rentable segun investigacion
+- [ ] **Hardware NeuroSense:** Prototipo ESP32 para captura de audio ambiente
+
+---
+
+## 7. Historial de Sesiones
+
+### Sesion 2026-02-19 (HOY)
+
+**Cambios realizados:**
+1. Renombrada carpeta `ML Studios/` -> `musica projects/` (+ actualizacion de 15+ archivos de referencia)
+2. Creadas 3 nuevas Claude Skills: `code-auditor`, `test-generator`, `market-researcher`
+3. Investigacion de mercado audio + IA 2026 con datos reales y 5 ideas combinadas
+4. **Implementado MVP de AtmoSphere:** Backend FastAPI completo con:
+   - 6 escenas de negocio pre-configuradas
+   - 5 perfiles de noise masking con DSP real
+   - Schemas Pydantic validados
+   - Generacion de audio real (WAV base64)
+   - Swagger UI documentado automaticamente
+5. Todos los endpoints probados y funcionando
+
+**Commits:**
+- `a0a4ce0` - feat(project): rename ML Studios, add skills and market research
+- `2ba0186` - feat(atmosphere): implement AtmoSphere MVP
+
+### Sesion anterior (2026-02-14~)
+
+- Auditoria inicial y refactorizacion del repositorio
+- Creacion de skill `business-analyst`
+- Documentacion completa de roadmap, modelo de negocio y necesidades
+- Organizacion de oportunidades de negocio por pais
