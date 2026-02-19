@@ -1,4 +1,4 @@
-# ML Studios
+# musica projects
 
 Laboratorio de soluciones de audio con Machine Learning e IA Generativa.
 
@@ -13,7 +13,7 @@ Laboratorio de soluciones de audio con Machine Learning e IA Generativa.
 ## Estructura
 
 ```
-ML Studios/
+musica projects/
 ├── api/
 │   └── sound_analysis.py    # Endpoint de análisis de audio
 ├── services/
@@ -30,7 +30,7 @@ ML Studios/
 ## Quick Start
 
 ```bash
-cd "ML Studios"
+cd "musica projects"
 pip install -r requirements.txt
 uvicorn main:app --reload
 

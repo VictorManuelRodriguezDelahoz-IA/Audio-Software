@@ -1,4 +1,4 @@
-# Roadmap de Implementación - ML Studios
+# Roadmap de Implementación - musica projects
 
 ## Estrategia General
 Desarrollo en paralelo de 3 productos con lanzamientos escalonados. Enfoque inicial en producto con menor time-to-market y mayor potencial de ingresos tempranos.

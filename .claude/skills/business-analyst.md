@@ -9,7 +9,7 @@
 ## Comandos Disponibles
 
 ### 1. `/business-analyst evaluate [proyecto]`
-Evalúa un proyecto existente (Recochapp, ML Studios, etc.)
+Evalúa un proyecto existente (Recochapp, musica projects, etc.)
 
 **Qué hace:**
 - Lee la documentación del proyecto

@@ -1,4 +1,4 @@
-# Necesidades - ML Studios (Laboratorio Sonoro)
+# Necesidades - musica projects (Laboratorio Sonoro)
 
 ## Visión General
 Emprendimiento de audio enfocado en soluciones de audio mediante Machine Learning e IA Generativa, con énfasis en modelos de Hugging Face y aplicaciones para eventos, artistas y empresas.

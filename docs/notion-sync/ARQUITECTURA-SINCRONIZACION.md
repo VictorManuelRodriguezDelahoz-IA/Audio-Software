@@ -6,7 +6,7 @@
 ┌─────────────────────────────────────────────────────────────┐
 │                         NOTION                               │
 │  ┌──────────────────┐         ┌──────────────────┐          │
-│  │  Recochapp Docs  │         │ ML Studios Docs  │          │
+│  │  Recochapp Docs  │         │ musica projects Docs  │          │
 │  │    (Database)    │         │    (Database)    │          │
 │  └────────┬─────────┘         └────────┬─────────┘          │
 │           │                            │                     │
@@ -48,7 +48,7 @@
 │      ├── weekly-progress.md                                 │
 │      └── brainstorm-features.md                             │
 │                                                              │
-│  ML Studios/                                                 │
+│  musica projects/                                                 │
 │  ├── docs/              ← Docs estables (edita aquí)        │
 │  │   ├── 01-necesidades.md                                  │
 │  │   ├── 02-roadmap.md                                      │
@@ -175,7 +175,7 @@ git push
 ```
 NOTION_TOKEN              → Token de integración
 NOTION_DATABASE_RECOCHAPP → ID de database Recochapp
-NOTION_DATABASE_ML_STUDIOS → ID de database ML Studios
+NOTION_DATABASE_ML_STUDIOS → ID de database musica projects
 ```
 
 ### .env Local (desarrollo)
@@ -235,11 +235,11 @@ Recent runs:
   ✅ brainstorm-ranking-system.md
 ✅ Recochapp sincronizado correctamente
 
-📥 Sincronizando ML Studios...
+📥 Sincronizando musica projects...
   ✅ product-decisions-q1.md
   ✅ metrics-february.md
   ⚠️  untitled.md (sin contenido)
-✅ ML Studios sincronizado correctamente
+✅ musica projects sincronizado correctamente
 
 ✨ Sincronización completada!
 ```

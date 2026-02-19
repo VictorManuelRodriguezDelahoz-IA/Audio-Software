@@ -44,7 +44,7 @@
 ### Audio & Music Tech
 
 **6. AI Audio Mastering (Competidor de LANDR)**
-- **Concepto:** Similar a "MasterMind AI" de ideas de ML Studios
+- **Concepto:** Similar a "MasterMind AI" de ideas de musica projects
 - **Mercado:** Huge, LANDR factura millones
 - **Diferenciador:** Mejor modelo, análisis de referencia, stems
 - **Investigar:** Cuánto paga la gente, churn rate de LANDR

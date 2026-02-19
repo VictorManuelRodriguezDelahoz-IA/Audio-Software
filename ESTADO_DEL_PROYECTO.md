@@ -7,7 +7,7 @@ Este documento resume el estado actual del repositorio, las decisiones tomadas y
 El repositorio se ha organizado para funcionar como una "Startup HQ" que alberga múltiples proyectos. Los dos proyectos activos principales son:
 
 *   **Recochapp:** Una aplicación full-stack para organizar partidos de fútbol casuales.
-*   **ML Studios:** Un laboratorio de I+D para soluciones de audio basadas en Machine Learning.
+*   **musica projects:** Un laboratorio de I+D para soluciones de audio basadas en Machine Learning.
 
 Se implementó un sistema de **sincronización con Notion** que actualiza automáticamente la documentación del proyecto cada semana mediante una GitHub Action.
 
@@ -27,7 +27,7 @@ El proyecto `Recochapp` estaba desorganizado y no era funcional. Se realizó una
 
 **En resumen: `Recochapp` ha pasado de ser un conjunto de archivos dispersos a una aplicación estructurada y funcional, lista para continuar su desarrollo.**
 
-#### 3. Estado de `ML Studios`
+#### 3. Estado de `musica projects`
 
 *   **Funcionalidad Base:** El proyecto tiene un endpoint `/analyze` que funciona y realiza un análisis básico de frecuencias de archivos de audio WAV usando `librosa`.
 *   **Estrategia a Largo Plazo:** Se ha documentado en el `roadmap` una estrategia clara para el desarrollo de modelos de IA:
@@ -40,7 +40,7 @@ El proyecto `Recochapp` estaba desorganizado y no era funcional. Se realizó una
 Para cuando retomes el proyecto, aquí están los puntos a seguir:
 
 *   **1. Implementar MVP de Atmosphere AI:**
-    *   **Acción inmediata:** Añadir las dependencias de IA (`transformers`, `torch`) al `requirements.txt` de `ML Studios` para empezar a construir el servicio de generación de música.
+    *   **Acción inmediata:** Añadir las dependencias de IA (`transformers`, `torch`) al `requirements.txt` de `musica projects` para empezar a construir el servicio de generación de música.
 
 *   **2. Validar Sincronización con Notion:**
     *   **Acción:** Realizar una sincronización manual o revisar los logs de la GitHub Action para asegurar que la conexión con la API de Notion sigue funcionando correctamente.

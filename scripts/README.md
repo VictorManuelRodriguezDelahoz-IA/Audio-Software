@@ -28,7 +28,7 @@ python scripts/sync_notion.py
 | `NOTION_TOKEN` | Token de integración de Notion |
 | `NOTION_PAGE_STARTUP` | Page ID de tu página "Startup" |
 | `NOTION_DATABASE_RECOCHAPP` | Database ID de Recochapp (opcional) |
-| `NOTION_DATABASE_ML_STUDIOS` | Database ID de ML Studios (opcional) |
+| `NOTION_DATABASE_ML_STUDIOS` | Database ID de musica projects (opcional) |
 
 ### Ejecución automática
 

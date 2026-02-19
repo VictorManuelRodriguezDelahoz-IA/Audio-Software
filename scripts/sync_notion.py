@@ -8,7 +8,7 @@ Configuración:
 3. Configurar secrets en GitHub:
    - NOTION_TOKEN: Token de integración
    - NOTION_DATABASE_RECOCHAPP: ID de la database de Recochapp
-   - NOTION_DATABASE_ML_STUDIOS: ID de la database de ML Studios
+   - NOTION_DATABASE_ML_STUDIOS: ID de la database de musica projects
 """
 
 import os
@@ -303,13 +303,13 @@ La sincronización ocurre automáticamente los lunes a las 9 AM o manualmente de
         else:
             print("⚠️  NOTION_DATABASE_RECOCHAPP no configurado, saltando...")
 
-        # ML Studios
+        # musica projects
         ml_studios_db = os.getenv('NOTION_DATABASE_ML_STUDIOS')
         if ml_studios_db:
             self.sync_database(
                 ml_studios_db,
-                self.base_path / "ML Studios",
-                "ML Studios"
+                self.base_path / "musica projects",
+                "musica projects"
             )
         else:
             print("⚠️  NOTION_DATABASE_ML_STUDIOS no configurado, saltando...")

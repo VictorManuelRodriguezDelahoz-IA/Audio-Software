@@ -10,11 +10,11 @@ Plataforma para organizar y encontrar partidos de fútbol casual en tu ciudad.
 - **Frontend:** Next.js + Tailwind CSS
 - **Estado:** En desarrollo
 
-### [ML Studios](ML%20Studios/) - Audio + IA
+### [musica projects](musica%20projects/) - Audio + IA
 Laboratorio de soluciones de audio con Machine Learning.
 - **Productos:** SilenceOS (oficinas), Lumina-Sync (streamers), Atmosphere AI (hospitality)
 - **Tech:** FastAPI + Hugging Face + Librosa
-- **Estado:** Refactorización
+- **Estado:** En desarrollo
 
 ## Documentación Global
 
@@ -49,7 +49,7 @@ Se ejecuta automáticamente cada lunes vía GitHub Actions.
 │   ├── docs/            # Documentación del proyecto
 │   └── docker-compose.yml
 │
-├── ML Studios/
+├── musica projects/
 │   ├── api/             # Endpoints FastAPI
 │   ├── services/        # Procesamiento de audio
 │   └── docs/            # Documentación del proyecto

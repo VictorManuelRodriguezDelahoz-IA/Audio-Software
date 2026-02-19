@@ -1,11 +1,48 @@
-# Skills de Análisis de Negocios
+# Skills del Proyecto
 
-## 🎯 Skills Disponibles
+## Skills Disponibles
 
-### 📊 Business Analyst
-Analiza negocios, evalúa oportunidades y genera reportes de investigación
+### 1. Business Analyst
+Analiza negocios, evalua oportunidades y genera reportes de investigacion.
 
 **Archivo:** [business-analyst.md](business-analyst.md)
+
+### 2. Code Auditor (NUEVO)
+Audita codigo, revisa calidad, estructura, seguridad y buenas practicas.
+
+**Archivo:** [code-auditor.md](code-auditor.md)
+
+**Comandos:**
+- `/code-auditor audit [proyecto]` - Auditoria completa
+- `/code-auditor review [archivo]` - Revision de archivo
+- `/code-auditor deps [proyecto]` - Auditoria de dependencias
+- `/code-auditor security [proyecto]` - Auditoria de seguridad
+- `/code-auditor architecture [proyecto]` - Evaluacion arquitectonica
+
+### 3. Test Generator (NUEVO)
+Genera y ejecuta tests unitarios, de integracion y E2E.
+
+**Archivo:** [test-generator.md](test-generator.md)
+
+**Comandos:**
+- `/test-generator generate [proyecto]` - Tests para proyecto completo
+- `/test-generator unit [archivo]` - Tests unitarios para archivo
+- `/test-generator api [proyecto]` - Tests de API/endpoints
+- `/test-generator run [proyecto]` - Ejecutar tests existentes
+- `/test-generator coverage [proyecto]` - Analisis de cobertura
+
+### 4. Market Researcher (NUEVO)
+Investiga mercados, identifica tendencias, analiza competencia y descubre oportunidades.
+
+**Archivo:** [market-researcher.md](market-researcher.md)
+
+**Comandos:**
+- `/market-researcher scan [sector]` - Escaneo amplio de sector
+- `/market-researcher deep-dive [idea]` - Analisis profundo
+- `/market-researcher competitors [producto]` - Mapa competitivo
+- `/market-researcher combine [idea1] + [idea2]` - Analisis de combinacion
+- `/market-researcher trends [ano]` - Tendencias del ano
+- `/market-researcher validate [idea]` - Validacion rapida
 
 ---
 
@@ -19,7 +56,7 @@ Simplemente menciona lo que quieres en el chat con Claude:
 "Analiza el proyecto Recochapp"
 "Investiga oportunidades de audio en USA"
 "Crea un análisis de la idea 'AI Audio Mastering'"
-"Compara Recochapp vs ML Studios"
+"Compara Recochapp vs musica projects"
 ```
 
 Claude automáticamente usará la skill business-analyst para:
@@ -100,7 +137,7 @@ Claude:
 Tú: "Analiza mi portafolio y recomiéndame qué hacer"
 
 Claude:
-- Revisa Recochapp + ML Studios
+- Revisa Recochapp + musica projects
 - Identifica gaps y sinergias
 - Busca oportunidades complementarias
 - Recomienda próximo proyecto
@@ -331,7 +368,7 @@ A: Sí, los archivos son Markdown editables. Ajusta lo que necesites.
 **Q: ¿Qué tan actualizada es la info de web research?**
 A: Claude busca info reciente (2026) en tiempo real.
 
-**Q: ¿Puedo analizar proyectos que no sean Recochapp o ML Studios?**
+**Q: ¿Puedo analizar proyectos que no sean Recochapp o musica projects?**
 A: Sí, funciona con cualquier idea que describas.
 
 ---

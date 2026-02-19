@@ -8,4 +8,4 @@ app.include_router(sound_analysis.router)
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to ML Studios API"}
+    return {"message": "Welcome to musica projects API"}

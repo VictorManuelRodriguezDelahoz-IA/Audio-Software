@@ -4,7 +4,7 @@
 
 ### Docs editables (en Git)
 - `Recochapp/docs/` - Documentación técnica de Recochapp
-- `ML Studios/docs/` - Documentación técnica de ML Studios
+- `musica projects/docs/` - Documentación técnica de musica projects
 - `docs/oportunidades-negocio/` - Investigación de oportunidades
 
 ### Docs sincronizados (desde Notion)

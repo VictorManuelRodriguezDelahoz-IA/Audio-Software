@@ -1,7 +1,7 @@
-# Modelo de Negocio - ML Studios
+# Modelo de Negocio - musica projects
 
 ## Visión de Negocio
-ML Studios es un **laboratorio de innovación en audio** que combina IA generativa, DSP (Digital Signal Processing) y hardware IoT para resolver problemas reales en tres verticales distintas: Corporativo, Entretenimiento y Hospitality/Retail.
+musica projects es un **laboratorio de innovación en audio** que combina IA generativa, DSP (Digital Signal Processing) y hardware IoT para resolver problemas reales en tres verticales distintas: Corporativo, Entretenimiento y Hospitality/Retail.
 
 ---
 
@@ -69,7 +69,7 @@ ML Studios es un **laboratorio de innovación en audio** que combina IA generati
 **Opción 1 - Revenue Share (Recomendado inicialmente):**
 - 20% de las donaciones procesadas vía Lumina-Sync
 - No cobro fijo mensual
-- Streamer gana $1,000/mes en donaciones Lumina → ML Studios gana $200
+- Streamer gana $1,000/mes en donaciones Lumina → musica projects gana $200
 
 **Opción 2 - Suscripción Mensual:**
 - **Basic:** $299/mes (efectos básicos, 5 dispositivos)
@@ -182,7 +182,7 @@ ML Studios es un **laboratorio de innovación en audio** que combina IA generati
 ### 1. Sample Marketplace
 **Modelo:** Marketplace de loops y samples generados por IA
 - Productores suben prompts → sistema genera samples → venta $1-10/pack
-- ML Studios toma 30% comisión
+- musica projects toma 30% comisión
 - **Mercado:** Productores musicales, beatmakers
 
 ### 2. Jingles AI (Self-Service)
@@ -196,7 +196,7 @@ ML Studios es un **laboratorio de innovación en audio** que combina IA generati
 **Modelo:** Marketplace que conecta artistas con oportunidades
 - Empresas publican necesidades (músico para evento, productor para jingle)
 - Artistas aplican
-- ML Studios toma 15% comisión
+- musica projects toma 15% comisión
 - **Mercado:** Artistas freelance, productores, empresas
 
 ### 4. Algoritmo de Posicionamiento Musical

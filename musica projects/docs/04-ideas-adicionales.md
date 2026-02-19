@@ -1,7 +1,7 @@
-# Ideas Adicionales y Experimentación - ML Studios
+# Ideas Adicionales y Experimentación - musica projects
 
 ## Filosofía del Laboratorio
-ML Studios no solo desarrolla productos, es un **laboratorio de experimentación** en audio + IA. Este documento captura ideas en diferentes etapas de madurez para explorar, validar o descartar.
+musica projects no solo desarrolla productos, es un **laboratorio de experimentación** en audio + IA. Este documento captura ideas en diferentes etapas de madurez para explorar, validar o descartar.
 
 ---
 
@@ -17,11 +17,11 @@ Marketplace donde productores compran samples/loops generados por IA. Calidad pr
 2. **Generación:** Sistema genera 5 variaciones usando modelos fine-tuned
 3. **Preview:** Escuchar antes de comprar
 4. **Compra:** $2-10 por pack, licencia comercial incluida
-5. **Revenue:** ML Studios 40%, infraestructura 10%, el resto para "creador del prompt" (opcional)
+5. **Revenue:** musica projects 40%, infraestructura 10%, el resto para "creador del prompt" (opcional)
 
 #### Modelo UGC (User Generated Content)
 - Usuarios pueden crear y vender sus propios packs
-- ML Studios valida calidad
+- musica projects valida calidad
 - Split: 70% creador, 30% plataforma
 
 #### Tech Stack
@@ -154,7 +154,7 @@ Marketplace que conecta artistas/productores con oportunidades laborales en mús
    - Reviews y ratings
 4. **Trabajo se realiza**
 5. **Pago procesado:**
-   - ML Studios toma 15% comisión
+   - musica projects toma 15% comisión
    - Protección de pago (escrow)
 
 #### Features Diferenciadores
@@ -463,7 +463,7 @@ App o dispositivo que simula llamadas reales:
 
 ## Conclusión
 
-ML Studios no es solo 3 productos, es una **factoría de innovación en audio + IA**. Este documento garantiza que las ideas no se pierdan y que tengamos un pipeline constante de experimentación.
+musica projects no es solo 3 productos, es una **factoría de innovación en audio + IA**. Este documento garantiza que las ideas no se pierdan y que tengamos un pipeline constante de experimentación.
 
 **Next Steps:**
 1. Completar MVPs de 3 productos core (Año 1)
