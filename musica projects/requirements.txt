@@ -1,5 +1,8 @@
 fastapi
-uvicorn
+uvicorn[standard]
 librosa
 numpy
+scipy
+pydantic-settings
+python-multipart
 python-dotenv
